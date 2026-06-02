@@ -765,6 +765,13 @@
       }
     }
   }
+  .hover\:text-gray-600 {
+    &:hover {
+      @media (hover: hover) {
+        color: var(--color-gray-600);
+      }
+    }
+  }
   .hover\:text-primary {
     &:hover {
       @media (hover: hover) {
@@ -906,6 +913,11 @@
   .lg\:mx-0 {
     @media (width >= 64rem) {
       margin-inline: calc(var(--spacing) * 0);
+    }
+  }
+  .lg\:block {
+    @media (width >= 64rem) {
+      display: block;
     }
   }
   .lg\:flex {
@@ -1181,6 +1193,9 @@ html.lenis, html.lenis body {
 .reveal-text .line-inner {
   display: block;
   transform: translateY(100%);
+}
+.about-heading h2 {
+  color: #babec5;
 }
 @property --tw-scale-x {
   syntax: "*";

@@ -395,3 +395,30 @@ document.querySelectorAll("a.group").forEach((link) => {
 
 });
 
+// section heading reveal
+gsap.from(".services-title", {
+    y: 150,
+    opacity: 0,
+    duration: 1.3,
+    ease: "power4.out",
+    scrollTrigger: {
+        trigger: ".services-title",
+        start: "top 80%", // starts when top of heading reaches 80% of viewport height
+        toggleActions: "play none none none",
+        once: true // play only once
+    }
+});
+
+// text scrub animation for about section heading
+gsap.utils.toArray(".about-heading h2").forEach((text) => {
+    gsap.to(text, {
+        color: "#000000",
+        ease: "none",
+        scrollTrigger: {
+            trigger: text,
+            start: "top 80%",
+            end: "top 40%",
+            scrub: true,
+        }
+    });
+});

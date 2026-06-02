@@ -333,3 +333,7 @@ html.lenis body {
     display: block;
     transform: translateY(100%);
 }
+
+.about-heading h2 {
+    color: #babec5; /* gray */
+}
