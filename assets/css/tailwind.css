@@ -1,0 +1,335 @@
+@import url('https://fonts.googleapis.com/css2?family=Instrument+Sans:ital,wght@0,400..700;1,400..700&display=swap');
+
+@import "tailwindcss";
+
+
+@theme {
+  --color-primary: #C9F31D;
+
+  --font-instrument: "Instrument Sans", sans-serif;
+}
+
+
+html {
+  scroll-behavior: smooth;
+}
+
+.container {
+  max-width: 1280px;
+  width: 100%;
+  margin: auto;
+  padding: 0 20px;
+}
+
+
+
+
+@layer base {
+  .img-fluid {
+    max-width: 100%;
+    height: auto;
+  }
+}
+
+
+
+/* =========================
+   CSS RESET / BASE
+========================= */
+
+/* Box sizing reset */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Remove default margin & padding */
+
+/* HTML & body */
+body {
+  height: 100%;
+  font-family: var(--font-instrument);
+  overflow-x: hidden;
+}
+
+/* font family */
+.instrument-font {
+  font-family: var(--font-instrument);
+  font-style: normal;
+}
+
+
+/* Remove link underline */
+a {
+  text-decoration: none;
+}
+
+/* Images responsive */
+img,
+picture,
+video,
+canvas {
+  max-width: 100%;
+  display: block;
+}
+
+/* Form elements inherit font */
+
+
+/* Button cursor */
+button {
+  cursor: pointer;
+}
+
+/* Table reset */
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+
+/* smooth scrooll */
+
+html.lenis,
+html.lenis body {
+  height: auto;
+}
+
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+
+.lenis.lenis-stopped {
+  overflow: hidden;
+}
+
+.lenis.lenis-scrolling iframe {
+  pointer-events: none;
+}
+
+/* Lenis end */
+
+
+.cta {
+  display: flex;
+  align-items: center;
+}
+
+/* =========================
+   NAV ITEMS
+========================= */
+
+.nav-items {
+  display: flex;
+  gap: 32px;
+  list-style: none;
+  text-transform: uppercase;
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.nav-items a {
+  position: relative;
+  text-decoration: none;
+  color: #dadada;
+  padding-bottom: 4px;
+  transition: color 0.3s ease;
+}
+
+/* Underline */
+.nav-items a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 0%;
+  height: 2px;
+  background: var(--color-primary);
+  transition: width 0.3s ease;
+}
+
+.nav-items a:hover::after {
+  width: 100%;
+}
+
+
+/* =========================
+   CTA BUTTON
+========================= */
+
+.cta-flip {
+  border: 1px solid #fff;
+}
+
+.cta-text {
+  color: #fff;
+  transition: color 0.3s ease;
+}
+
+
+/* =========================
+   LOGO
+========================= */
+
+.logo a {
+  position: relative;
+  display: block;
+  width: 140px;
+  height: 40px;
+}
+
+.logo img {
+  position: absolute;
+  inset: 0;
+  height: 40px;
+  transition: opacity 0.3s ease;
+}
+
+
+/* =========================
+   HEADER
+========================= */
+
+#mainHeader {
+  transition:
+    background-color 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+/*  */
+/* ================= HERO ================= */
+/* ================= HERO ================= */
+.hero-section {
+  position: relative;
+  overflow: hidden;
+}
+
+
+/* ================= VERTICAL LINE ================= */
+.banner-line {
+  position: relative;
+  overflow: hidden;
+}
+
+
+/* ================= VERTICAL METEOR ================= */
+/* ================= HERO ================= */
+.hero-section {
+  position: relative;
+  overflow: hidden;
+}
+
+
+/* ================= VERTICAL LINE ================= */
+.banner-line {
+  position: relative;
+  overflow: hidden;
+}
+
+
+/* ================= VERTICAL METEOR ================= */
+.meteor {
+  position: absolute;
+  top: -80px;
+  left: 50%;
+  transform: translateX(-50%);
+
+  width: 100px;
+  height: 50px;
+
+  background: linear-gradient(to bottom,
+      transparent,
+      #c9f31d);
+
+  opacity: 0.85;
+  filter: blur(0.6px);
+
+  pointer-events: none;
+
+  box-shadow: 0 0 10px rgba(201, 243, 29, 0.6);
+}
+
+
+/* ================= FULL WIDTH TOP BORDER ================= */
+.hero-top-border {
+  position: absolute;
+  top: 92px;
+  left: 0;
+
+  width: 100%;
+  height: 1px;
+
+  background: rgba(255, 255, 255, 0.09);
+
+  overflow: hidden;
+  z-index: 2;
+}
+
+
+/* ================= TOP HORIZONTAL METEOR ================= */
+/* SAME STYLE AS VERTICAL METEOR */
+.top-meteor {
+  position: absolute;
+  top: 50%;
+  left: -80px;
+
+  transform: translateY(-50%);
+
+  width: 50px;
+  height: 100px;
+
+  /* LEFT → transparent | RIGHT → green */
+  background: linear-gradient(to right,
+      transparent,
+      #c9f31d);
+
+  opacity: 0.85;
+  filter: blur(0.6px);
+
+  pointer-events: none;
+
+  box-shadow: 0 0 10px rgba(201, 243, 29, 0.6);
+}
+
+.spin-vector img {
+  animation: spin 6s linear infinite;
+  transform-origin: center;
+  display: block;
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (max-width: 768px) {
+  .container {
+  padding: 0 15px;
+}
+}
+
+
+.reveal-text {
+    display: block;
+    overflow: hidden;
+}
+
+.reveal-text .line {
+    display: block;
+    overflow: hidden;
+}
+
+.reveal-text .line-inner {
+    display: block;
+    transform: translateY(100%);
+}
